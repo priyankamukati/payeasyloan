@@ -1,0 +1,36 @@
+extends baseTemplate
+
+
+block content 
+    // LOGIN FORM
+     
+    .header_align 
+      .card-container3
+        
+        .card
+ 
+            .card__details1
+              h1.card__sub-heading1 Login to PayEasy Loans
+              h4.card__text1 (CARE: Username and password are case sensitive.)
+              p.card__text Please enter the following Details
+              
+              form(action='/login' method='POST')
+                  label(for='rmail') Email 
+                  br
+                  input(type='text' id='email' name='email')
+                  br
+                  br
+                  label(for='fname') Password 
+                  br
+                  input(type='password' id='password' name='password')
+                  br
+                  br
+                  input.card__sub-heading1( type='submit' value='Log In')
+                  br
+                  br
+                  h1.card__sub-heading2 #{err}
+
+      .header_loan_logo
+          img(src='img/people-login.png' alt='Loan logo', width="950rem")
+      
+                

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title> The Trending Loans</title>
+  </head>
+  <body>
+
+    <!-- <section class="overview"> -->
+    <main class="main">
+      <div class="card-container">
+        <div class="card">
+          
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">New Loan </h4>
+            <p class="card__text">
+              Please enter the following Details
+            </p>
+            <div class="card__data">    
+              <form action="/newLoan">
+                <label for="cname">Customer Name:</label>
+                <input type="text" id="cname" name="cname"><br><br>
+                <label for="pnumber">Phone Number:</label>
+                <input type="text" id="pnumber" pnumber="pnumber"><br><br>  
+                <label for="address">Address:</label>
+                <input type="address" id="address" name="address"><br><br>
+                <label for="loanamount">Loan Amount:</label>
+                <input type="loanamount" id="loanamount" name="loanamount"><br><br>
+                <label for="interest">Interest:</label>
+                <input type="interest" id="interest" name="interest"><br><br>
+                <label for="loantermyears">Loan Term Years:</label>
+                <input type="loantermyears" id="loantermyears" name="loantermyears"><br><br>
+                <label for="loantype">Loan Type:</label>
+                <input type="loantype" id="loantype" name="loantype"><br><br>
+                <label for="loantype">Description:</label>
+                <input type="description" id="description" name="description"><br><br>
+                <input  class="card__sub-heading" type="submit" value="Submit">
+              </form>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

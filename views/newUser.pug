@@ -1,0 +1,59 @@
+extends baseTemplate
+
+block content 
+    // SIGNUP FORM
+
+    .header_align 
+      .card-container1
+
+        .card
+      
+             .card__details1
+           
+               h1.card__sub-heading1 New User 
+               p.card__text Please enter the following Details
+          
+               form(action='/signup' method='POST')
+                   label(for='fname') First name 
+                   br
+                   input#fname(type='text' name='fname')
+                   br
+                   br
+                   label(for='lname') Last name 
+                   br
+                   input#lname(type='text' name='lname')
+                   br
+                   br
+                   label(for='pnumber') Phone Number 
+                   br
+                   input#lname(type='text' name='pnumber')
+                   br
+                   br
+                   label(for='address') Address 
+                   br
+                   input#lname(type='text' name='address')
+                   br
+                   br
+                   label(for='email') Email 
+                   br
+                   input#email(type='email' name='email')
+                   br
+                   br
+                   label(for='password') Password 
+                   br
+                   input#password(type='password' name='password')
+                   br
+                   br
+                   label(for='cpassword') Confirm Password 
+                   br
+                   input#cpassword(type='password' name='cpassword')
+                   br
+                   br
+                   input.card__sub-heading(type='submit' value='Submit')
+                   br
+                   br
+                   h1.card__sub-heading2 #{message}
+
+      .header_loan_logo
+          img(src='img/people-login.png' alt='Loan logo', width='980rem' height='750rem')
+

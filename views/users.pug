@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700', rel='stylesheet')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='shortcut icon', type='image/png', href='img/bank.png')
+    title  Get Users List
+  body
+    h1.heading-primary
+      span List of Users
+    div
+      table.table-header
+        thead
+          tr
+            th(scope='col') First Name
+            th(scope='col') Last Name
+            th(scope='col') Phone Number
+            th(scope='col') Address
+            th(scope='col') Email
+            th(scope='col') Role
+
+        tbody
+          each loandata in data  
+            tr.table-secondary
+              td=loandata.firstName
+              td=loandata.lastName
+              td=loandata.phoneNumber
+              td=loandata.address
+              td=loandata.email 
+              td=loandata.role
+              
+          
+            

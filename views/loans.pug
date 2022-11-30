@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700', rel='stylesheet')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='shortcut icon', type='image/png', href='img/bank.png')
+    title  View Loans
+  body 
+    // DARK BLUE HEADER
+    header.header
+
+    .header_align
+
+      .header_data_merge 
+        .header_loan_logo
+          img(src='img/company.png' alt='Loan logo' height="105")
+
+        .header_down
+          .header_span PayEasy Loans
+
+      nav.nav.nav--loans
+        form(action='/userProfile')
+        img(src='img/homeicon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/loandomain') Home
+        img(src='img/myprofileicon.png' alt='Loan logo' height='30') 
+        a.nav__el(href='/newLoan') My profile
+        img(src='img/takealoan1.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/newLoan') Take a Loan
+        img(src='img/viewloanicon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/viewAllLoan') View my Loans List
+        img(src='img/reporticon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/faq') My Report
+
+        img(src='img/logouticon.png' alt='Logout logo' height='30')  
+        a.nav__el(href='/logout') Logout
+        a.nav__el(href='#')
+         img.nav__user-img(src='img/users/user.png' alt='User photo')
+         span  #{user.firstName + ' ' + user.lastName}
+    h1.heading-primary
+      span List of Loans 
+    div
+      table.table-header
+        thead
+          tr
+            th(scope='col') Customer Name
+            th(scope='col') Phone Number
+            th(scope='col') Address
+            th(scope='col') Loan Type
+            th(scope='col') Loan Amount
+            th(scope='col') Interest Rate 
+            th(scope='col') Loan Term Years
+            th(scope='col') Description
+            th(scope='col') Created Date
+            th(scope='col') Inserted Date
+        tbody
+          each loandata in data  
+            tr.table-secondary
+              td=loandata.customerName
+              td=loandata.phoneNumber
+              td=loandata.address 
+              td=loandata.loanType
+              td=loandata.loanAmount
+              td=loandata.interest 
+              td=loandata.loanTermYears
+              td=loandata.description
+              td=loandata.createdDate 
+              td=loandata.insertedDate
+          
+      //FOOTER
+      include _footer          

@@ -1,0 +1,82 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700' rel='stylesheet')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='shortcut icon' type='image/png' href='/img/companylogo.png')
+  title  PayEasy Loans
+  
+
+  body
+    // DARK BLUE HEADER
+    header.header
+
+    .header_align
+
+      .header_data_merge 
+        .header_loan_logo
+          img(src='img/company.png' alt='Loan logo' height="105")
+
+        .header_down
+          .header_span PayEasy Loans
+
+      nav.nav.nav--loans
+        form(action='/userProfile')
+
+
+
+        img(src='img/homeicon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/loandomain') Home
+        if user.role =='admin'
+          img(src='img/viewloanicon.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/loans') View all Loans List
+          img(src='img/allusericon.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/viewAllUser') View All User
+        else 
+          img(src='img/myprofileicon.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/newLoan') My profile
+          img(src='img/takealoan1.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/newLoan') Take a Loan
+          img(src='img/viewloanicon.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/viewAllLoan') View my Loans List
+          img(src='img/reporticon.png' alt='Loan logo' height='30')  
+          a.nav__el(href='/faq') My Report
+
+        img(src='img/logouticon.png' alt='Logout logo' height='30')  
+        a.nav__el(href='/logout') Logout
+        a.nav__el(href='#')
+         img.nav__user-img(src='img/users/user.png' alt='User photo')
+         span  #{user.firstName + ' ' + user.lastName}
+
+
+    
+
+    //CONTENT
+    block content
+      
+        img(src='img/img1.png' alt='Loan logo',height="800rem",width="1700rem")
+        .top-right4 Welcome #{user.firstName + ' ' + user.lastName}   
+        
+     
+     
+
+        h2.heading-secondary.ma-bt-lg Message from PayEasy Loans
+
+    
+        p.description__text
+        | If you receive what appears to be a fraudulent text message, we urge you to report it immediately. Forward any Bank Branch
+        | -related messages to abuse@bankofbranch.com. Include the number the message came from and a copy of the message itself..
+        p.description__text
+        | A fraudulent email may ask you to supply information in a return email, in a separate form attached to the email or by visiting a fraudulent website using a link contained in the email message. The people attempting to get this information
+        | may use it to access your accounts directly in order to withdraw money or to open new accounts in your name using your information!
+    
+    //FOOTER
+    include _footer
+
+
+
+
+
+
+

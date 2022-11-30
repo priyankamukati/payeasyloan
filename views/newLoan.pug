@@ -1,0 +1,99 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700' rel='stylesheet')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='shortcut icon' type='image/png' href='/img/companylogo.png')
+  title  PayEasy Loans
+  
+
+  body
+    // DARK BLUE HEADER
+    header.header
+
+    .header_align
+
+      .header_data_merge 
+        .header_loan_logo
+          img(src='img/company.png' alt='Loan logo' height="105")
+
+        .header_down
+          .header_span PayEasy Loans
+
+      nav.nav.nav--loans
+        form(action='/userProfile')
+        img(src='img/homeicon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/loandomain') Home
+        a.nav__el(href='/newLoan') My profile
+        img(src='img/takealoan1.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/newLoan') Take a Loan
+        img(src='img/viewloanicon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/viewAllLoan') View my Loans List
+        img(src='img/reporticon.png' alt='Loan logo' height='30')  
+        a.nav__el(href='/faq') My Report
+
+        img(src='img/logouticon.png' alt='Logout logo' height='30')  
+        a.nav__el(href='/logout') Logout
+        a.nav__el(href='#')
+         img.nav__user-img(src='img/users/user.png' alt='User photo')
+         span  #{user.firstName + ' ' + user.lastName}
+        
+    
+    
+
+    //CONTENT
+    block content
+     .card-main 
+      .card-container2
+        .card1
+          .card__details1
+            h4.card__sub-heading1 New Loan Request
+            p.card__text1
+              | Please enter the following Details
+            
+              form(action='/newLoan' method='POST')
+                label(for='loantype') Loan Type 
+                select#loantype(name='loantype')
+                  option(value='Personal Loan') Personal Loan
+                  option(value='Auto Loan') Auto Loan
+                  option(value='Mortgage Loan') Mortgage Loan
+                  option(value='Student Loan') Student loan 
+                  option(value='Business Loan') Business Loan
+                  option(value='Home Loan') Home Loan
+                br
+                br
+                label(for='loanamount') Loan Amount  
+                input#loanamount(type='loanamount' name='loanamount')
+                br
+                br
+                label(for='interest') Interest Rate    
+                input#interest(type='interest' name='interest')
+                br
+                br
+                label(for='loantermyears') Loan Term Years  
+                input#loantermyears(type='loantermyears' name='loantermyears')
+                br
+                br
+                label(for='loantype') Description  
+                input#description(type='description' name='description')
+                br
+                br
+                input.card__sub-heading(type='submit' value='Submit')
+                br
+                br
+                h1.card__sub-heading2 #{message}
+
+      .header_loan_logo
+          img(src='img/people-login.png' alt='Loan logo', width="950rem")
+
+
+    //FOOTER
+    include _footer
+
+
+
+
+
+
+
